@@ -27,12 +27,15 @@ http://seqanswers.com/forums/showthread.php?t=42776
 \# Download "bbduk_help.txt" and open with Notepad++  
 
 
-### (First) adapter, quality, and length
+### (First) adapter, quality, and length  
+\# The log and some stats are displayed on screen. Because these are stderr of bbduk,  
+\# you may want to redirect stderr to save a log file.   
 /home/user/Programs/bbmap/bbduk.sh -Xmx400g \
  in1=XXX_1.fastq.gz in2=XXX_2.fastq.gz \
  out1=XXX.trim.1.fastq.gz out2=XXX.trim.2.fastq.gz \
  ref=/home/user/Programs/bbmap/resources/adapters.fa \
- ktrim=r k=23 mink=11 hdist=1 tpe tbo qtrim=rl trimq=10 minlen=100 t=72
+ ktrim=r k=23 mink=11 hdist=1 tpe tbo qtrim=rl trimq=10 minlen=100 t=72 \
+ stats=XXX.trim.stats.txt 2> XXX.trim.log
 
 ### (Second) phiX174 decontamination
 /home/user/Programs/bbmap/bbduk.sh -Xmx400g \
