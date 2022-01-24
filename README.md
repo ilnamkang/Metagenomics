@@ -8,11 +8,13 @@ seqkit stat -j 72 *.fastq.gz
 https://github.com/ewels/MultiQC  
 https://multiqc.info/  
 
-First, make a directory for storing FastQC results.  
+\# First, make a directory for storing FastQC results.  
 mkdir XXX_FastQC  
 cd XXX_FastQC  
+\# Run FastQC in non-interactive mode (-t : one thread per one file)  
 fastqc -o ./ -t 72 <path_to_your_data>/*.gz  
 cd ..  
+\# Run MultiQC (-n : output file name, input directory -> FastQC result directory)  
 multiqc -n Groundwater_multiqc ./GW_FastQC  
 
 ## Trimming
