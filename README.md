@@ -1,23 +1,28 @@
 # Metagenomics
 
 ## Stat
-https://github.com/shenwei356/seqkit
-
+https://github.com/shenwei356/seqkit  
 seqkit stat -j 72 *.fastq.gz
 
+## QC
+https://github.com/ewels/MultiQC  
+https://multiqc.info/  
+
+First, make a directory for storing FastQC results.  
+mkdir XXX_FastQC  
+cd XXX_FastQC  
+fastqc -o ./ -t 72 <path_to_your_data>/*.gz  
+cd ..  
+multiqc -n Groundwater_multiqc ./GW_FastQC  
+
 ## Trimming
-https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/data-preprocessing/
+https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/data-preprocessing/  
+https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/  
+http://seqanswers.com/forums/showthread.php?t=42776  
 
-https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/
-
-http://seqanswers.com/forums/showthread.php?t=42776
-
-
-\# To get and save help and options of bbduk.sh, run
-
-\# /home/user/Programs/bbmap/bbduk.sh > bbduk_help.txt
-
-\# Download "bbduk_help.txt" and open with Notepad++
+\# To get and save help and options of bbduk.sh, run  
+\# /home/user/Programs/bbmap/bbduk.sh > bbduk_help.txt  
+\# Download "bbduk_help.txt" and open with Notepad++  
 
 
 ### (First) adapter, quality, and length
@@ -34,9 +39,8 @@ http://seqanswers.com/forums/showthread.php?t=42776
  ref=/home/user/Programs/bbmap/resources/phix174_ill.ref.fa.gz \
  k=31 hdist=1 stats=XXX.phiX.stats.txt t=72
 
-\# I have little experience with phiX174 decontamination (not so important for isolate genome, but may be important for metagenomes)
-
-\# I don't know whether or not we can combine the above two steps into one run
+\# I have little experience with phiX174 decontamination (not so important for isolate genome, but may be important for metagenomes)  
+\# I don't know whether or not we can combine the above two steps into one run  
 
 ## Assembly
 /home/kangin/Programs/SPAdes-3.15.3-Linux/bin/spades.py --meta -1 XXX.final.1.fastq.gz -2 XXX.final.2.fastq.gz \
