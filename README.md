@@ -48,7 +48,7 @@ http://seqanswers.com/forums/showthread.php?t=42776
 \# I don't know whether or not we can combine the above two steps into one run  
 
 ## Assembly
-/home/kangin/Programs/SPAdes-3.15.3-Linux/bin/spades.py --meta -1 XXX.final.1.fastq.gz -2 XXX.final.2.fastq.gz \
+spades.py --meta -1 XXX.final.1.fastq.gz -2 XXX.final.2.fastq.gz \
  -k 21,33,55,77,99,127 -m 450 -t 72 -o XXX.SPAdes
  
  
