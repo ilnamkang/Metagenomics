@@ -2,7 +2,11 @@
 
 ## Stat
 https://github.com/shenwei356/seqkit  
+```zsh
 seqkit stat -j 72 *.fastq.gz
+```
+
+
 
 ## QC (FastQC and MultiQC)  
 https://github.com/ewels/MultiQC  
