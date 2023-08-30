@@ -3,7 +3,7 @@
 ## Stat
 https://github.com/shenwei356/seqkit  
 ```zsh
-seqkit stat -j 72 *.fastq.gz
+seqkit stats -j 72 *.fastq.gz
 ```
 
 
