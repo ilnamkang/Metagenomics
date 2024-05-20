@@ -25,7 +25,7 @@ gtdb <- read.xlsx("gtdbtk.xlsx", sheet = "Sheet1", cols = 1:2) %>%
     )
   # This step is to make classification string at all taxonomic ranks
   # include information of higher ranks.
-  # Order is important here.
+  # Order (from species to phylum) is important here.
   # If you reverse the order, there would be much redundancy.
 
 
